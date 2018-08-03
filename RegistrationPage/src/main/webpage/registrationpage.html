@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Page</title>
+</head>
+<body align="center">
+
+<h1>Registration Form</h1>
+
+<form name="registration">
+
+
+
+First Name:
+<input type='text' placeholder="Enter First Name" name='fname'><br>
+
+Last Name:
+<input type='text' placeholder="Enter Last Name" name='lname'><br>
+
+
+
+
+ Email:
+ <input type='email' name='email1'><br>
+Mobile No.
+
+
+<input name="mob"  id="mob" type="number" ><br>
+
+  
+ 
+  
+
+Address:
+<textarea  rows="4" cols="50" name="add" ></textarea><br>
+City
+<input type='text' name='city'><br>
+State:
+<select name="state">
+  <option class="option" value="Madhya Pradesh">Madhya Pradesh</option>
+  <option class="option" value="Maharastra">Maharastra</option>
+  <option class="option" value="Uttar Pradesh">Uttar Pradesh</option>
+  <option class="option" value="Tamil Nadu">Tamil Nadu</option>
+</select><br>
+
+
+
+
+
+<a href="nextpage.html"><button type="button" onclick="return validateForm()" class="sub">Submit</button></a>
+
+</form>
+
+<script>
+function validateForm() {
+    var x = document.forms["registration"]["email1"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+	
+
+    if (mob.value.length != 10) {
+        alert("Please Enter 10 digit Mobile Number");
+        mob.focus();
+        return false;
+    }
+    var IndNum = /^[789]\d{9}$/;
+    if (IndNum.test(mob.value) == false) {
+        alert("Please enter Correct Mobile Number");
+        mob.value = "";
+        mob.focus();
+        return false;
+    }
+}
+</script>
+
+</body>
+</html>
